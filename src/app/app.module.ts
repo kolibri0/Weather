@@ -7,7 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { ErrComponent } from './components/err/err.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { SingupComponent } from './components/singup/singup.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { SigninComponent } from './components/signin/signin.component';
     LoginComponent,
     ForecastComponent,
     ErrComponent,
-    SigninComponent
+    SingupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,66 @@
+.message{
+    text-align: center;
+    margin-top: 30px;
+    color: #ff9800;
+    font-size: 20px;
+}
+
+.card{
+    background-color: #fff;
+    width: 250px;
+    height: 430px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 70px auto 0;
+}
+.card-text{
+    padding-top: 20px;
+}
+
+.input{
+    margin-top: 15px;
+    width: 200px;
+    border: 1px solid #c2ab67;
+    border-radius: 3px;
+    padding: 2px 8px;
+}
+.time{
+    margin-top: 15px;
+    font-size: 20px;
+}
+.data{
+    margin-top: 15px;
+    color: gray;
+}
+
+.card-btn{
+    width: 70px;
+    margin-top: 10px;
+    background-color: #fffaeb;
+    border-radius: 5px;
+    border: 1px solid #ff9800;
+}
+
+.card-btn:hover{
+    background-color: #fff3d0;
+}
+
+.temp{
+    font-size: 40px;
+    margin-top: 15px;
+}
+.temp-f{
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.sky{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card-img{
+    width: 65px;
+    height: 65px;
+}

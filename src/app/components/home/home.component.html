@@ -1,1 +1,31 @@
-<p>home works!</p>
+<div class="message">if you want to see the weather forecast for the week, then you need to register</div>
+
+<div class="card" *ngIf="weather">
+    <div class="card-text">Weather now</div>
+
+    <input class="input" type="text" [(ngModel)]="city" placeholder="Enter city">
+
+    <button class="card-btn" type="submit" (click)="search()">Search</button>
+
+    <p>{{weather.location.name}}</p>
+
+    <div class="time">{{weather.location.localtime | date: 'h:mm a'}}</div>
+
+    <div class="data">{{weather.location.localtime | date: 'EEEE d.M.yyyy'}}</div>
+    
+    <div class="temp">{{weather.current.temp_c}}°C</div>
+    <!-- <div class="feels-like">Feels like: 20°C</div> -->
+    <div class="temp-f">{{weather.current.temp_f}}°F</div>
+    <!-- <div class="feels-like">Feels like: 10°F</div> -->
+
+    <div class="sky">{{weather.current.condition.text}}</div>
+    <img class="card-img" src="{{weather.current.condition.icon}}" alt="img">
+
+    
+</div>
+
+<div class="card" *ngIf="!weather">
+    <div class="card-text">Please Enter city</div>
+    <input class="input" type="text" [(ngModel)]="city" placeholder="Enter city">
+    <button class="card-btn" type="submit" (click)="search()">Search</button>
+</div>
