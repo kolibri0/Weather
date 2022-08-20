@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
     if(!this.city)return
     this.weatherService.oneDay(this.city).subscribe((res)=>{
       this.weather = res
-      console.log(this.weather)
     },error => {
       alert(`${error.statusText}, please enter the city correctly`)
     })

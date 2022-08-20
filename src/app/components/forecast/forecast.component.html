@@ -1,1 +1,59 @@
-<p>forecast works!</p>
+ <h1 class="forecast-text">Weather forecast for the week</h1>
+
+ <div class="container" *ngIf="weather">   
+
+    <input class="input" type="text" [(ngModel)]="city" placeholder="Enter city">
+
+    <button class="card-btn" type="submit" (click)="forecast()">Search</button>
+
+    <div class="card" *ngFor="let day of weather.forecast.forecastday" >
+        <p class="date">{{day.date | date: 'EEEE d.M.yyyy'}}</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Temp.</th>
+                    <th>°C</th>
+                    <th>°F</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Max.</td>
+                    <td>{{day.day.maxtemp_c}}</td>
+                    <td>{{day.day.maxtemp_f}}</td>
+                </tr>
+                <tr>
+                    <td>Avg.</td>
+                    <td>{{day.day.avgtemp_c}}</td>
+                    <td>{{day.day.avgtemp_f}}</td>
+                </tr>
+                <tr>
+                    <td>Min.</td>
+                    <td>{{day.day.mintemp_c}}</td>
+                    <td>{{day.day.mintemp_f}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>{{weather.location.name}}</p>
+
+
+        <p>{{day.day.condition.text}}</p>
+
+        <img class="img" src="{{day.day.condition.icon}}" alt="">
+
+
+        <p>Moon phase:<br><span class="moon">{{day.astro.moon_phase}}</span></p>
+        <p>Sunrise: {{day.astro.sunrise}}</p>
+        <p>Sunset: {{day.astro.sunset}}</p>
+    </div>
+    
+</div>
+
+<div class="container" *ngIf="!weather">
+    <h2 class="message">Please enter the city</h2>
+
+    <input class="input" type="text" [(ngModel)]="city" placeholder="Enter city">
+
+    <button class="card-btn" type="submit" (click)="forecast()">Search</button>
+</div>

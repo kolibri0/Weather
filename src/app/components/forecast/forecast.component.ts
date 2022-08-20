@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Forecast } from 'src/app/models/forecast';
+import { Weather } from 'src/app/models/weather';
+import { WeatherService } from 'src/app/service/weather.service';
+
 
 @Component({
   selector: 'app-forecast',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForecastComponent implements OnInit {
 
-  constructor() { }
+  city!: string
+  weather!: Weather & Forecast
+
+  constructor(
+    private weatherService: WeatherService
+  ) { }
 
   ngOnInit(): void {
+    
+  }
+
+  forecast(){
+    if(!this.city)return
+    this.weatherService.sevenDay(this.city).subscribe((res) => {
+      this.weather = res
+    },error => {
+      alert(`${error.statusText}, please enter the city correctly`)
+    })
   }
 
 }

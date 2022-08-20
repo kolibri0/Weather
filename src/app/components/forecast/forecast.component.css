@@ -1,0 +1,83 @@
+.forecast-text{
+    color: #BCEBDD;
+    text-align: center;
+}
+.message{
+    color: #ff9800;
+}
+.container{
+    text-align: center;
+    justify-content: space-between;
+}
+
+.input{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    border: 1px solid #c2ab67;
+    border-radius: 3px;
+    padding: 2px 8px;
+}
+.card-btn{
+    display: block;
+    width: 70px;
+    margin: 10px auto 0;
+    background-color: #fffaeb;
+    border-radius: 5px;
+    border: 1px solid #ff9800;
+}
+.date{
+    color: gray;
+}
+.card{
+    border-radius: 10px;
+    display: inline-block;
+    margin: 20px 10px 0 10px;
+    background-color: #ffffff;
+    width: 240px;
+    padding: 0 5px 5px;
+}
+.table{
+    margin: 0 auto 10px;
+}
+th {
+    background: #BCEBDD;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+.img{
+    height: 64px;
+}
+
+.moon{
+    font-size: 18px;
+}

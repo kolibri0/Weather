@@ -14,6 +14,8 @@ export interface Weather {
         }
         wind_kph: string,
         pressure_mb: string, 
+        feelslike_c?: string,
+        feelslike_f?: string,
     } 
     
     
