@@ -8,7 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { ErrComponent } from './components/err/err.component';
 import { SingupComponent } from './components/singup/singup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],

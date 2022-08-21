@@ -1,0 +1,58 @@
+.card{
+    margin: 100px auto 0;
+    width: 300px;
+    height: 390px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.login{
+    text-align: center;
+}
+.label{
+    font-size: 14px;
+}
+.form-input{
+    display: block;
+    width: 282px;
+    margin: 3px auto 15px;
+    border: none;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #c2ab67;
+    border-radius: 3px;
+    padding: 2px 8px;
+    outline: none;
+    
+}
+.form-input:focus{
+    border: 1px solid #c2ab67;
+}
+.form-btn{
+    cursor: pointer;
+    width: 80px;
+    background-color: #fffaeb;
+    border-radius: 5px;
+    border: 1px solid #ff9800;
+    display: block;
+    margin: 25px auto 20px;
+    text-align: center;
+}
+.registred{
+    text-align: center;
+    font-size: 18px;
+}
+.form-btn.signup{
+    margin-top: 10px;
+    padding: 2px 3px;
+    width: 100px;
+}
+.form-btn.signup::after{
+    content: "→";
+    margin-left: 5px;
+}
+.form-btn.signup:hover{
+    background-color: #fcefc7;
+}
+
+
+

@@ -7,11 +7,11 @@ import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'forecast', component: ForecastComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SingupComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: ErrComponent}
 ];
 

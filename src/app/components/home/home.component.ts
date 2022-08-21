@@ -22,10 +22,9 @@ export class HomeComponent implements OnInit {
 
   search(){
     if(!this.city)return
-    this.weatherService.oneDay(this.city).subscribe((res)=>{
-      this.weather = res
-    },error => {
-      alert(`${error.statusText}, please enter the city correctly`)
+    this.weatherService.oneDay(this.city).subscribe({
+      next: (res) => this.weather = res,
+      error: (err) => alert(`${err.statusText}, please enter the city correctly`)
     })
   }
 
