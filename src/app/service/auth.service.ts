@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
@@ -8,7 +9,6 @@ import { User } from '../models/user';
 })
 export class AuthService {
   user!: any
-  aninimous!: boolean | undefined
 
   constructor(
     private router: Router,
@@ -27,18 +27,21 @@ export class AuthService {
     this.af.onAuthStateChanged((user)=>{
       if(!user)return
       this.user = user
-      this.aninimous = user.isAnonymous
-      console.log(this.aninimous)
-      this.router.navigate(['/home'])
+      console.log(this.user)
     })
   }
 
+
   anonim(){
-    this.af.signInAnonymously()
+    return this.af.signInAnonymously()
   }
 
   logOut(){
-    this.user = null
-    return this.af.signOut()
+    return this.af.signOut().then(()=> {
+      this.user = null
+      this.router.navigate(['/login'])
+    })
+    
   }
+
 }

@@ -16,8 +16,6 @@ export class AppComponent {
   ){}
 
   logout(){
-    this.authService.logOut().then(()=> {
-      this.router.navigate(['/login'])
-    }).catch((error) => alert(error.message))
+    this.authService.logOut()
   }
 }

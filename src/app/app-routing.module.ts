@@ -10,8 +10,8 @@ import { UserGuard } from './guard/user.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, canActivate: [UserGuard]},
-  {path: 'forecast', component: ForecastComponent, canActivate: [AnonimousGuard]},
+  {path: 'home', component: HomeComponent, canActivate: [AnonimousGuard]},
+  {path: 'forecast', component: ForecastComponent, canActivate: [UserGuard]},
   {path: 'login', component: LoginComponent,},
   {path: 'signup', component: SingupComponent},
   {path: '**', component: ErrComponent}

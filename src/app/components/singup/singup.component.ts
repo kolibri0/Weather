@@ -39,8 +39,10 @@ export class SingupComponent implements OnInit {
   }
 
   anonim(){
-    this.auth.anonim()
-    this.auth.loggedIn()
+    this.auth.anonim().then(()=>{
+      this.auth.loggedIn()
+      this.router.navigate(['/home'])
+    }).catch((error) => alert(error.message))
   }
 
 }

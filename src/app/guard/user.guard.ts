@@ -8,6 +8,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class UserGuard implements CanActivate {
 
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -16,11 +17,7 @@ export class UserGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
-      if(this.authService.user){
-        return true
-      }else{
-        return false
-      }
+      return (this.authService.user.email && !this.authService.user.isAnonymous)? true : false
   }
   
 }
