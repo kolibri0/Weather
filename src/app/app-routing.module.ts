@@ -5,12 +5,14 @@ import { ForecastComponent } from './components/forecast/forecast.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
+import { AnonimousGuard } from './guard/anonimous.guard';
+import { UserGuard } from './guard/user.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'forecast', component: ForecastComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent, canActivate: [UserGuard]},
+  {path: 'forecast', component: ForecastComponent, canActivate: [AnonimousGuard]},
+  {path: 'login', component: LoginComponent,},
   {path: 'signup', component: SingupComponent},
   {path: '**', component: ErrComponent}
 ];

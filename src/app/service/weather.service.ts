@@ -9,16 +9,18 @@ import { Weather } from '../models/weather';
 })
 export class WeatherService {
 
+  key: string = 'ba3865f623704ba2b96113211222208'
+
   constructor(
     private http: HttpClient
   ) { }
 
 
   oneDay(city: string):Observable<any>{
-    return this.http.get<Weather>(`http://api.weatherapi.com/v1/current.json?key=4bb8925c402649dda83191918220608&q=${city}&aqi=no`)
+    return this.http.get<Weather>(`http://api.weatherapi.com/v1/current.json?key=${this.key}&q=${city}&aqi=no`)
   }
 
   sevenDay(city: string): Observable<any>{
-    return this.http.get<Forecast & Weather>(`http://api.weatherapi.com/v1/forecast.json?key=4bb8925c402649dda83191918220608&q=${city}&days=7&aqi=no&alerts=no`)
+    return this.http.get<Forecast & Weather>(`http://api.weatherapi.com/v1/forecast.json?key=${this.key}&q=${city}&days=7&aqi=no&alerts=no`)
   }
 }

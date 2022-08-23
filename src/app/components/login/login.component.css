@@ -24,6 +24,10 @@
     outline: none;
     
 }
+.help-text{
+    display: block;
+    
+}
 .form-input:focus{
     border: 1px solid #c2ab67;
 }
@@ -38,6 +42,7 @@
     text-align: center;
 }
 .registred{
+    margin-top: 90px;
     text-align: center;
     font-size: 18px;
 }
