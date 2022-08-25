@@ -24,16 +24,14 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/), Validators.required]),
       password: new FormControl(null, [Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/), Validators.required])
     });
+    if(this.auth.user){
+      this.router.navigate(['/home'])
+    }
   }
 
   onSubmit(){
     if(!this.form.value)return
-    this.auth.login(this.form.value).then((res) => {
-      if (!res.user)return
-        this.auth.loggedIn()
-        this.router.navigate(['/home'])
-    })
-    .catch((error) => alert(error.message))
+    this.auth.login(this.form.value)
   }
 
 }

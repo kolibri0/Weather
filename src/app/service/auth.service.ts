@@ -13,27 +13,33 @@ export class AuthService {
   constructor(
     private router: Router,
     private af: AngularFireAuth
-  ) { }
+  ){}
 
   signUp(user: User){
     return this.af.createUserWithEmailAndPassword(user.email, user.password)
   }
   
   login(user: User){
-    return this.af.signInWithEmailAndPassword(user.email, user.password)
+    return this.af.signInWithEmailAndPassword(user.email, user.password).then(() => {
+      this.af.onAuthStateChanged((user)=> {
+        if(!user)return
+        this.user = user
+        this.router.navigate(['/home'])
+      })
+    }).catch((error) => alert(error.message))
   }
 
-  loggedIn(){
-    this.af.onAuthStateChanged((user)=>{
-      if(!user)return
-      this.user = user
-      console.log(this.user)
-    })
-  }
 
 
   anonim(){
-    return this.af.signInAnonymously()
+    return this.af.signInAnonymously().then(()=>{
+      this.af.onAuthStateChanged((user) => {
+        if(!user)return
+        this.user = user
+        this.router.navigate(['/home'])
+      })
+      
+    }).catch((error) => alert(error.message))
   }
 
   logOut(){
