@@ -25,7 +25,8 @@ export class ForecastComponent implements OnInit {
   forecast(){
     if(!this.city)return
     this.weatherService.sevenDay(this.city).subscribe({
-      next: (res) => this.weather = res,
+      next: (res) => {this.weather = res
+      console.log(res)},
       error: (err) => alert(`${err.statusText}, please enter the city correctly`)
     })
   }

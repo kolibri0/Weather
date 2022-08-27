@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getAuth } from '@angular/fire/auth';
+import { getAuth, user } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
@@ -21,7 +21,7 @@ export class AuthService {
   
   login(user: User){
     return this.af.signInWithEmailAndPassword(user.email, user.password).then(() => {
-      this.af.onAuthStateChanged((user)=> {
+      return this.af.onAuthStateChanged((user)=> {
         if(!user)return
         this.user = user
         this.router.navigate(['/home'])
@@ -32,14 +32,16 @@ export class AuthService {
 
 
   anonim(){
-    return this.af.signInAnonymously().then(()=>{
-      this.af.onAuthStateChanged((user) => {
+    return this.af.signInAnonymously().then(() => {
+      return this.af.onAuthStateChanged((user)=> {
         if(!user)return
         this.user = user
+        console.log(user)
         this.router.navigate(['/home'])
       })
-      
     }).catch((error) => alert(error.message))
+
+   
   }
 
   logOut(){

@@ -16,7 +16,7 @@ export class AnonimousGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      if((this.authService.user.email == null) && this.authService.user.isAnonymous){
+      if(((this.authService.user.email == null) && this.authService.user.emailVerified == false ) || ((this.authService.user.email == null) && this.authService.user.emailVerified == false )){
         return true
       }else if(this.authService.user.email && !this.authService.user.isAnonymous){
         return true

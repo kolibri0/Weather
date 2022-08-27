@@ -6,9 +6,9 @@
 
     <button class="card-btn" type="submit" (click)="forecast()">Search</button>
 
-    <div class="card" *ngFor="let day of weather.forecast.forecastday" >
+    <div class="card" *ngFor="let day of weather.forecast.forecastday; let i = index">
         <p class="date">{{day.date | date: 'EEEE d.M.yyyy'}}</p>
-
+        <a routerLink="{{i+1}}">a</a>
         <table class="table">
             <thead>
                 <tr>
