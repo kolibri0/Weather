@@ -17,3 +17,15 @@
     text-decoration: underline;
 }
 
+@media (max-width: 360px) {
+    .nav{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .nav-item{
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+}

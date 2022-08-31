@@ -20,6 +20,7 @@ export class SingupComponent implements OnInit {
     
   }
 
+  //форма
   ngOnInit(): void {
     this.form = new FormGroup({
         email : new FormControl(null , [Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/), Validators.required]),
@@ -27,6 +28,7 @@ export class SingupComponent implements OnInit {
       })
   }
 
+  //регистрация нового пользователя
   onSubmit(){
     this.auth.signUp(this.form.value).then((res) => {
         if (!res.user)return
@@ -38,6 +40,7 @@ export class SingupComponent implements OnInit {
       })
   }
 
+  //вход анонимного пользователя
   anonim(){
     this.auth.anonim()
   }

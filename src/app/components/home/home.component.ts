@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //вызов API прогноза погоды на данный момент
   search(){
     if(!this.city)return
     this.weatherService.oneDay(this.city).subscribe({

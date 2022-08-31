@@ -15,13 +15,15 @@ export class AuthService {
     private af: AngularFireAuth
   ){}
 
+  //регистрация
   signUp(user: User){
     return this.af.createUserWithEmailAndPassword(user.email, user.password)
   }
   
+  //проверка входа
   login(user: User){
     return this.af.signInWithEmailAndPassword(user.email, user.password).then(() => {
-      return this.af.onAuthStateChanged((user)=> {
+      this.af.onAuthStateChanged((user)=> {
         if(!user)return
         this.user = user
         this.router.navigate(['/home'])
@@ -30,13 +32,12 @@ export class AuthService {
   }
 
 
-
+//анонимный вход
   anonim(){
     return this.af.signInAnonymously().then(() => {
-      return this.af.onAuthStateChanged((user)=> {
+      this.af.onAuthStateChanged((user)=> {
         if(!user)return
         this.user = user
-        console.log(user)
         this.router.navigate(['/home'])
       })
     }).catch((error) => alert(error.message))
@@ -44,6 +45,7 @@ export class AuthService {
    
   }
 
+  //выход
   logOut(){
     return this.af.signOut().then(()=> {
       this.user = null

@@ -22,11 +22,12 @@ export class ForecastComponent implements OnInit {
     
   }
 
+
+  //вызов API прогноза погоды
   forecast(){
     if(!this.city)return
     this.weatherService.sevenDay(this.city).subscribe({
-      next: (res) => {this.weather = res
-      console.log(res)},
+      next: (res) => this.weather = res,
       error: (err) => alert(`${err.statusText}, please enter the city correctly`)
     })
   }

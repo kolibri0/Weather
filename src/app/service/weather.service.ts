@@ -9,7 +9,7 @@ import { Weather } from '../models/weather';
 })
 export class WeatherService {
 
-  key: string = 'ba3865f623704ba2b96113211222208'
+  key: string = '86f1a540d5be45f5b1e102721223108'
 
   constructor(
     private http: HttpClient
