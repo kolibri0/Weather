@@ -9,7 +9,7 @@ import { Weather } from '../models/weather';
 })
 export class WeatherService {
 
-  key: string = '86f1a540d5be45f5b1e102721223108'
+  key: string = '3f0815e6eeea4859ac071122220310'
 
   constructor(
     private http: HttpClient
@@ -20,7 +20,7 @@ export class WeatherService {
     return this.http.get<Weather>(`http://api.weatherapi.com/v1/current.json?key=${this.key}&q=${city}&aqi=no`)
   }
 
-  sevenDay(city: string): Observable<any>{
+  sevenDay(city: string): Observable<Forecast & Weather>{
     return this.http.get<Forecast & Weather>(`http://api.weatherapi.com/v1/forecast.json?key=${this.key}&q=${city}&days=7&aqi=no&alerts=no`)
   }
 }
