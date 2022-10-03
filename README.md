@@ -2,26 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Перед тем, как начать разрабатывать, вам необходимо настроить себе окружение. Установите Node.js и npm (если вы еще не установили их) себе на компьютер. Убедитесь, что вы используете Node.js версии не ниже 6.9.x и npm не ниже 3.x.x (для этого достаточно выполнить в терминале node -v и npm -v).
 
-## Code scaffolding
+# Затем установите Angular CLI глобально.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install -g @angular/cli
+```
+После этого клонируйте Git репозиторий.
 
-## Build
+```bash
+git clone https://github.com/kolibri0/Weather.git
+```
+Зайдите в папку с проектом.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Запустите его командой.
 
-## Running unit tests
+```bash
+ng serve 
+```
+or
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng s
+```
